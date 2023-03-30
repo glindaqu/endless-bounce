@@ -3,20 +3,38 @@ using UnityEngine.UI;
 
 public class StorePreloader : MonoBehaviour
 {
-    [SerializeField] public Text coins;
-    void Start()
+    [SerializeField] GameObject[] list;
+    [SerializeField] Text coins;
+
+    private void Start()
     {
-        foreach (var g in GameObject.FindGameObjectsWithTag("StoreItem"))
+        coins.text = PlayerPrefs.GetInt("Coins").ToString() + "$";
+
+        foreach (GameObject g in list)
         {
-            if (PlayerPrefs.GetString("allStaff").IndexOf(g.name) != -1)
+            int index = int.Parse(g.name.Split(' ')[1]);
+
+            int BGIndex = PlayerPrefs.GetInt("BG");
+            int PaddleIndex = PlayerPrefs.GetInt("Paddle");
+            int BallIndex = PlayerPrefs.GetInt("Ball");
+
+            if (PlayerPrefs.GetString("Staff").IndexOf(g.name) != -1)
             {
-                if (PlayerPrefs.GetString("currentBG") == g.name)
-                    g.gameObject.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "Selected";
+                if (BGIndex == index && g.CompareTag("BGItem") || PaddleIndex == index && g.CompareTag("PaddleItem") || BallIndex == index && g.CompareTag("BallItem"))
+                {
+                    g.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "ВЫБРАНО";   
+                }
+
                 else
-                    g.gameObject.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "Select";
+                {
+                    g.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "ВЫБРАТЬ";
+                }
             }
         }
+    }
 
-        coins.text = "COINS: " + PlayerPrefs.GetInt("money").ToString();
+    public void CoinsSetter()
+    {
+        coins.text = PlayerPrefs.GetInt("Coins").ToString() + "$";
     }
 }

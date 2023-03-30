@@ -3,22 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void mainLoad()
+    public void StoreLoad()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Store");
     }
-
-    public void storeLoad()
+    public void GameLoad()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Dzen mode");
     }
-
-    public void menuLoad()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void onExit()
+    public void Exit()
     {
         Application.Quit();
     }

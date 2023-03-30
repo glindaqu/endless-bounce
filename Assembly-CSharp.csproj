@@ -56,12 +56,23 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bounce.cs" />
-    <Compile Include="Assets\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\BallMove.cs" />
+    <Compile Include="Assets\Scripts\CoinsViewer.cs" />
+    <Compile Include="Assets\Scripts\FloorCollision.cs" />
+    <Compile Include="Assets\Scripts\GamePreloader.cs" />
+    <Compile Include="Assets\Scripts\MenuLoader.cs" />
+    <Compile Include="Assets\Scripts\PaddleMove.cs" />
+    <Compile Include="Assets\Scripts\PaddleReplace.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
-    <Compile Include="Assets\Scripts\Setup.cs" />
+    <Compile Include="Assets\Scripts\ScoreUpdater.cs" />
     <Compile Include="Assets\Scripts\StoreController.cs" />
     <Compile Include="Assets\Scripts\StorePreloader.cs" />
+    <Compile Include="Assets\Scripts\Tab.cs" />
+    <Compile Include="Assets\Scripts\TabView.cs" />
+    <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\UI pack\Documentation.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

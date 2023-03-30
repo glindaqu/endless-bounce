@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - vWall
-  - hWall
-  - dead
-  - StoreItem
+  - Ball
+  - PaddleItem
+  - BGItem
+  - BallItem
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - slivImg
+  - 
   - 
   - 
   - 
